@@ -38,7 +38,7 @@ export default function Home() {
     <>
 
 
-      <div className="">
+      <div className="mt-10">
         <div className="container-xl">
           <br />
           <h4 className="br_text-2xl-serif md:br_text-3xl-serif" style={{textAlign:"center"}}>GET IN TOUCH</h4>

@@ -627,7 +627,7 @@ useEffect(() => {
               data-id="b92d2c"
               data-element_type="section"
               data-settings='{"background_background":"gradient"}'
-              style={{ backgroundImage: " linear-gradient(90deg, #FFFFFF 50%, #fff 50%)" }}
+              style={{ backgroundImage: "transparent" }}
             >
               <div className="elementor-container elementor-column-gap-default">
                 <div
@@ -760,7 +760,7 @@ useEffect(() => {
                                       <div className="wfacp-comm-form-detail clearfix">
                                         <div className="wfacp-row">
 
-                                          <h1 className="form-row form-row-wide wfacp-form-control-wrapper text-bold myGray">Contact</h1>
+                                          <p className="br_text-base-sans-stretched md:br_text-lg-sans-stretched myGray">Contact</p>
 
                                           <p
                                             className="form-row form-row-wide wfacp-form-control-wrapper wfacp-col-full  wfacp_field_required validate-required validate-email validate-email"
@@ -799,7 +799,7 @@ useEffect(() => {
                                             />
                                           </p>
 
-                                           <h1 className="form-row form-row-wide wfacp-form-control-wrapper text-bold myGray">Delivery</h1>
+                                           <p className="br_text-base-sans-stretched md:br_text-lg-sans-stretched myGray">Delivery</p>
                                           <p
                                             className="form-row form-row-first wfacp-form-control-wrapper wfacp-col-left-half  wfacp_field_required validate-required"
                                             id="billing_first_name_field"
@@ -1347,6 +1347,7 @@ useEffect(() => {
             </section>
 
           </div>
+          <div className="mt-10"></div>
         </div>
 
 
@@ -1378,7 +1379,7 @@ useEffect(() => {
       <style
         dangerouslySetInnerHTML={{
           __html:
-            '\n\n  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {\n    font-family: initial;\n    font-size: initial;\n    line-height: initial;\n    font-weight: initial;\n    padding: initial;\n    border-radius: initial;\n    border-style: initial;\n    border-width: initial;\n    border-color: initial;\n    background-color: initial;\n    margin-bottom: initial;\n    text-shadow: initial;\n    box-shadow: initial;\n    box-sizing: initial;\n    transition: initial;\n    color: initial;\n}\n'
+            '\n\n  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {\n    font-family: initial;\n    font-size: initial;\n    line-height: initial;\n    font-weight: initial;\n    padding: initial;\n    border-radius: initial;\n    border-style: initial;\n    border-width: initial;\n    border-color: initial;\n    background-color: transparent;\n    margin-bottom: initial;\n    text-shadow: initial;\n    box-shadow: initial;\n    box-sizing: initial;\n    transition: initial;\n    color: initial;\n}\n'
         }}
       />
       <style

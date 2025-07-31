@@ -151,7 +151,7 @@ const Footer = () => {
                         className="SiteFooterSitemap__social column"
                     >
                         <ul>
-                            <li>
+                            {/* <li>
                                 <a
                                     target="_blank"
                                     href="https://www.tiktok.com/@petyshop.lb"
@@ -176,7 +176,7 @@ const Footer = () => {
 
 
                                 </a>
-                            </li>
+                            </li> */}
                             <li>
                                 <a
                                     target="_blank"
@@ -207,7 +207,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <a
                                     target="_blank"
                                     href="https://www.facebook.com/profile.php?id=61577786737631"
@@ -227,11 +227,11 @@ const Footer = () => {
                                         />
                                     </svg>
                                 </a>
-                            </li>
+                            </li> */}
                             <li>
                                 <a
                                     target="_blank"
-                                    href="https://wa.me/995579245946"
+                                    href="https://wa.me/96176334886"
                                     data-auto-id="true"
                                     id="page-footer-https-www-youtube-com-channel-ucy6vodc_wyzj4rlslixgp1q-1"
                                 >

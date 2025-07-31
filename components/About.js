@@ -43,7 +43,7 @@ export default function Home() {
             <h5 className="myGray mytitle2" style={{ marginBottom: "20px" }}>
               About Company
             </h5>
-            <p className="myGray" style={{ fontSize: "16px", lineHeight: "1.6" }}>
+            <p className="myGray" style={{ fontSize: "16px", lineHeight: "1.6", textAlign: "justify"  }}>
               Scento d’Italia is a culturally rooted fragrance brand positioned
               for high-volume success in the MENA region and beyond. With a launch
               collection of Eau de Parfum priced under $7.00, the brand balances

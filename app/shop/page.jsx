@@ -131,11 +131,11 @@ const Body = () => {
 
         <header className="br_text-white  br_p-3 br_pt-11 md:br_py-20 br_flex md:br_justify-center">
           <div className="br_text-left md:br_max-w-[600px] lg:br_max-w-[800px] md:br_text-center br_flex br_flex-col br_gap-2  md:br_gap-4 md:br_items-center">
-            <h1 className="br_text-3xl md:br_text-4xl  myGray">
-              Our Animals
+            <h1 className="myGray mytitle2">
+              Our Products
             </h1>
             <p className="br_text-base-sans-stretched md:br_text-lg-sans-stretched myGray">
-              Get new friend now and enjoy the best of the wildlife.
+              Get new offer now and enjoy the best of the scents.
             </p>
           </div>
         </header>
@@ -268,105 +268,79 @@ const Body = () => {
 
 
 
-                {allTemp && allTemp.length > 0 ? (
-                  allTemp.map((item, index) => (
-                    <a href={`/product?id=${item._id}`}  >
-                      <div
-                        key={item._id}
-                        className="br_grid br_grid-cols-1 supports-subgrid:br_row-span-4 supports-subgrid:br_grid-rows-[subgrid]"
-                      >
-                        <div className="relative inline-block w-full max-w-[300px] aspect-square">
-                          <img
-                            src={item.img[0]}
-                            alt="Default"
-                            className="w-full h-full object-cover object-center rounded"
-                          />
+{allTemp && allTemp.length > 0 ? (
+  allTemp.map((item, index) => {
+    const shortDesc =
+      item.description && item.description.length > 10
+        ? item.description.replace(/<[^>]+>/g, "").substring(0, 40) + "..."
+        : item.description?.replace(/<[^>]+>/g, "") || "";
 
-                          {(
-                            (item.type === 'single' && parseInt(item.stock) === 0) ||
-                            (item.type === 'collection' &&
-                              item.color?.every(color =>
-                                color.sizes?.every(size => parseInt(size.qty) === 0)
-                              )
-                            )
-                          ) && (
-                              <div className="absolute inset-0 bg-gray-600 bg-opacity-70 text-white flex items-center justify-center text-lg font-bold z-10 rounded">
-                                Out of Stock
-                              </div>
-                            )}
-                        </div>
+    return (
+      <a className="mb-5" key={item._id} href={`/product?id=${item._id}`}>
+        <motion.div className="myTable">
+          {/* 1st Row - Square Image */}
+          <div className="w-full aspect-square overflow-hidden relative ">
+            <img
+              src={item.img[0]}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+            {(
+              (item.type === "single" && parseInt(item.stock) === 0) ||
+              (item.type === "collection" &&
+                item.color?.every(color =>
+                  color.sizes?.every(size => parseInt(size.qty) === 0)
+                ))
+            ) && (
+              <div className="absolute inset-0 bg-gray-600 bg-opacity-70 text-white flex items-center justify-center text-lg font-bold z-10 rounded">
+                Out of Stock
+              </div>
+            )}
+          </div>
+
+          {/* 2nd Row - Title */}
+          <div className="myProduct1 px-2">{item.title}</div>
+
+          {/* 3rd Row - Description & Category */}
+          <div className="myRow px-2">
+            <p className="myP1">{shortDesc}</p>
+            <p className="myP1">{item.category}</p>
+          </div>
+
+          {/* 4th Row - Discount & Price */}
+          <div className="px-2 flex justify-between items-center">
+            <span className="line-through text-gray-500 myP2">
+              ${parseFloat(item.price).toFixed(2)}
+            </span>
+            <span className="myP2">
+              {item.type === "single" || (item.type === "collection" && !item.color)
+                ? `$${item.discount}`
+                : item.color?.length
+                ? (() => {
+                    const prices = item.color
+                      .flatMap(c => c.sizes || [])
+                      .map(s => s.price);
+                    if (prices.length === 0) return "N/A";
+                    const minPrice = Math.min(...prices);
+                    const maxPrice = Math.max(...prices);
+                    return minPrice === maxPrice
+                      ? `$${minPrice.toFixed(2)}`
+                      : `$${minPrice.toFixed(2)} - $${maxPrice.toFixed(2)}`;
+                  })()
+                : `$${item.discount}`}
+            </span>
+          </div>
+        </motion.div>
+      </a>
+    );
+  })
+) : (
+  <div className="home___error-container">
+    <h2 className="text-black text-xl dont-bold">...</h2>
+  </div>
+)}
 
 
-
-
-                        <div className="Layout br_contents">
-                          <span className="br_contents br_edition-">
-                            <div className="br_grid br_grid-cols-1 br_grid-rows-[auto_auto_1fr_auto] supports-subgrid:br_row-span-4 supports-subgrid:br_grid-rows-[subgrid] initial:br_text-white apex:br_bg-[#4e4e4e] apex:br_text-white br_gap-2 br_pb-3 br_group/tile br_relative">
-                              <div
-                                style={{ textAlign: "center" }}
-                                className="initial:br_row-span-1 br_col-start-1 br_row-start-2 br_px-3 group-[.centered]/tile:br_justify-center group-[.centered]/tile:br_text-center"
-                              >
-                                <h3 className="myNewC br_text-base-sans-spaced br_line-clamp-2 sm:br_line-clamp-none edition:br_text-grey-500 edition:br_hidden first:edition:br_inline edition:before:br_content-['_–_'] apex:edition:br_text-grey-300">
-                                  <a
-                                    href={`/product?id=${item._id}`}
-                                    className="br_text-current br_no-underline myGray"
-                                    id="anchorNew"
-                                  >
-                                    {item.title}
-                                    <span
-                                      className="br_absolute br_inset-0 br_z-10"
-                                      aria-hidden="true"
-                                    />
-                                  </a>
-                                </h3>
-                                <div className="price-container br_inline-flex br_flex-wrap br_gap-x-2 br_items-baseline apex:br_text-white group-[.centered]/tile:br_justify-center">
-                                  <span className="font-light text-[13px] py-1 line-through text-gray-400 float-left  ">
-                                    {!item.color?.some(c => c.sizes?.length > 0) && (
-                                      <span>${parseFloat(item.price).toFixed(2)}</span>
-                                    )}
-
-                                  </span>
-                                  <span className="font-light text-[13px] py-1 rounded myRed float-left">
-                                    {/* ${parseFloat(item.discount).toFixed(2)} */}
-                                    {item.type === 'single' || (item.type === 'collection' && !item.color)
-                                      ? (`$${item.discount}` || 'N/A')
-                                      : (item.type === 'collection' && item.color && item.color.some(c => c.sizes?.length)
-                                        ? (() => {
-                                          // Flatten all sizes' prices
-                                          const prices = item.color
-                                            .flatMap(c => c.sizes || [])
-                                            .map(s => s.price);
-
-                                          if (prices.length === 0) return 'N/A';
-
-                                          const minPrice = Math.min(...prices);
-                                          const maxPrice = Math.max(...prices);
-
-                                          return minPrice === maxPrice
-                                            ? `$${minPrice.toFixed(2)}`
-                                            : `$${minPrice.toFixed(2)} - $${maxPrice.toFixed(2)}`;
-                                        })()
-                                        : `$${item.discount}`
-                                      )
-                                    }
-                                    <span className="ml-1 text-xs">
-                                      {Math.round(((item.price - item.discount) / item.price) * 100)}% off
-                                    </span>
-                                  </span>
-                                </div>
-                                <br />
-                              </div>
-                            </div>
-                          </span>
-                        </div>
-                      </div>
-                    </a>
-                  ))
-                ) : (
-                  <div className="home___error-container">
-                    <h2 className="text-black text-xl dont-bold">...</h2>
-                  </div>
-                )}
 
 
 

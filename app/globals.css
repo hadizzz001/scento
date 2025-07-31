@@ -1543,6 +1543,12 @@
    text-align: left !important;
     color: #1f1a17 !important;
  }
+ .myP3{
+   font-size: 18px !important;
+   font-weight: lighter !important;  
+   text-align: left !important;
+    color: #1f1a17 !important;
+ }
 
 
   .myTable{
@@ -1552,3 +1558,50 @@
     border-top: #cfcfcf 0.1px solid !important;
     border-bottom: #cfcfcf 0.1px solid !important;
  }
+
+
+ .elementor-20120 .elementor-element.elementor-element-f1c046e:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-20120 .elementor-element.elementor-element-f1c046e > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: #ebe5d7 !important;
+}
+
+.elementor-20120 .elementor-element.elementor-element-b92d2c > .elementor-container {
+    background-color: #ebe5d7 !important;
+}
+
+.elementor-20120 .elementor-element.elementor-element-b92d2c:not(.elementor-motion-effects-element-type-background), .elementor-20120 .elementor-element.elementor-element-b92d2c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: #ebe5d7 !important;
+    background-image: linear-gradient(90deg, #ebe5d7 50%, #ebe5d7 50%) !important;
+}
+
+
+.elementor-20120 .elementor-element.elementor-element-b92d2c:not(.elementor-motion-effects-element-type-background), .elementor-20120 .elementor-element.elementor-element-b92d2c > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: #ebe5d7 !important;
+    background-image: linear-gradient(90deg, #ebe5d7 50%, #ebe5d7 50%) !important;
+}
+
+
+
+#mynewNavNav{
+    display: none !important;
+}
+
+#mobile-menu-btn , #mySearchColor{
+  background: transparent !important;
+}
+
+#myColorblack{
+    color: #000 !important;
+}
+
+@media (min-width: 640px) {
+    .sm\:flex {
+        display: flex !important
+;
+    }
+
+    #mynewNavNav{
+    display: flex !important;
+}
+}
+
+

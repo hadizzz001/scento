@@ -57,7 +57,7 @@ export default function NavBar() {
             aria-label="Open menu"
             className="flex items-center space-x-2"
           >
-            <Menu className="w-6 h-6 stroke-[1]" />
+            <Menu className="w-6 h-6 stroke-[1]" id='myColorblack' />
           </button>
 
           {/* Logo - center on mobile, left on desktop */}
@@ -73,7 +73,7 @@ export default function NavBar() {
           </div>
 
           {/* Desktop menu - center on desktop */}
-          <nav className="hidden sm:flex flex-1 justify-center items-center gap-10 text-lg font-bold">
+          <nav className="hidden sm:flex flex-1 justify-center items-center gap-10 text-lg font-bold" id='mynewNavNav'>
             <a href="/" className="hover:underline">Home</a>
             <a href="/about" className="hover:underline">About</a>
             <a href="/shop" className="hover:underline">Shop</a>
@@ -83,7 +83,7 @@ export default function NavBar() {
           {/* Search & Cart - right on all screens */}
           <div className="flex-1 flex justify-end items-center space-x-4">
             {/* Search */}
-            <button onClick={() => setSearchOpen(true)} aria-label="Search">
+            <button onClick={() => setSearchOpen(true)} aria-label="Search" id='mySearchColor'>
               <svg
                 width="24px"
                 height="24px"
@@ -165,7 +165,7 @@ export default function NavBar() {
               className="absolute top-10 right-4"
               aria-label="Close menu"
             >
-              <X className="w-8 h-8 stroke-[1]" />
+              <X className="w-8 h-8 stroke-[1]" id='myColorblack' />
             </button>
             <nav className="flex flex-col items-center gap-6 mt-12 text-3xl font-bold">
               <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
@@ -184,7 +184,7 @@ export default function NavBar() {
               className="absolute top-10 right-4"
               aria-label="Close search"
             >
-              <X className="w-8 h-8 stroke-[1]" />
+              <X className="w-8 h-8 stroke-[1]" id='myColorblack' />
             </button>
 
             <form action={'/search'} method="get" className="searchOverlay">
