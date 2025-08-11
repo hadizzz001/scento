@@ -1605,3 +1605,7 @@
 }
 
 
+.myOlOlOL, ol{
+  list-style-type: decimal !important;
+  list-style: decimal !important;
+}
