@@ -1,9 +1,7 @@
 // "use client";  
-import { useState, useEffect } from "react";
-import ProductArrival from './ProductArrival';
+import { useState, useEffect, useRef } from "react";  
 import Catslider from './Catslider';
-import ProductTop from './ProductTop';
-import Vid from './Vid';
+import ProductTop from './ProductTop'; 
 import ReviewsSwiper from './ReviewsSwiper';
 import Rate from './Rate';
 import Offer from './Offer';
@@ -15,6 +13,22 @@ import About from './About';
 
 
 const Body = () => {
+    const audioRef = useRef(null);
+
+  useEffect(() => {
+    // Attempt to play audio after a small delay (some browsers allow muted autoplay)
+    const playAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.play().catch(err => {
+          console.warn("Autoplay blocked. Waiting for user interaction.");
+        });
+      }
+    };
+
+    playAudio();
+  }, []);
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
@@ -24,7 +38,12 @@ const Body = () => {
     <div>
 
       <>
-
+ <audio
+        ref={audioRef}
+        src="/background.mp3" // put your mp3 in the /public folder
+        autoPlay
+        loop
+      />
 
         <div className="topBannerWrapper"></div>
 

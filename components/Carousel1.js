@@ -25,7 +25,7 @@ const MyCarousel = () => {
         <h1 className="text-2xl font-bold uppercase animate-slideInLeft myWhite mytitle1"> 
             Brand Essence
         </h1>
-        <p className="text-[11px] mt-4 animate-slideInLeft delay-200 text-white  ">
+        <p className="text-lg mt-4 animate-slideInLeft delay-200 text-white  ">
           Scento d’Italia is a Middle Eastern-born perfume brand
 inspired by the timeless elegance of Italian and French perfumery. It blends the emotional richness of oriental
 scents with the refined artistry of Europe’s fragrance
