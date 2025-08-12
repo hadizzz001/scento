@@ -73,11 +73,13 @@ export default function NavBar() {
           </div>
 
           {/* Desktop menu - center on desktop */}
-          <nav className="hidden sm:flex flex-1 justify-center items-center gap-10 text-lg font-bold" id='mynewNavNav'>
+          <nav className="hidden sm:flex flex-1 justify-center items-center gap-10  " id='mynewNavNav'>
             <a href="/" className="hover:underline">Home</a>
             <a href="/about" className="hover:underline">About</a>
             <a href="/shop" className="hover:underline">Shop</a>
             <a href="/perfume" className="hover:underline">Perfume Glossary</a>
+            <a href="/mer" className="hover:underline">Merchandising Solutions</a>
+            <a href="/file.pdf" className="hover:underline">Profile</a>
             <a href="/contact" className="hover:underline">Contact Us</a>
           </nav>
 
@@ -173,6 +175,8 @@ export default function NavBar() {
               <a href="/about" onClick={() => setMenuOpen(false)}>About</a>
               <a href="/shop" onClick={() => setMenuOpen(false)}>Shop</a>
               <a href="/perfume" onClick={() => setMenuOpen(false)}>Perfume Glossary</a>
+              <a href="/mer" onClick={() => setMenuOpen(false)}>Merchandising Solutions</a>
+              <a href="/file.pdf" onClick={() => setMenuOpen(false)}>Profile</a>
               <a href="/contact" onClick={() => setMenuOpen(false)}>Contact Us</a>
             </nav>
           </div>

@@ -1609,3 +1609,10 @@
   list-style-type: decimal !important;
   list-style: decimal !important;
 }
+
+
+
+nav a{ 
+  font-size: 14px !important;
+  white-space: nowrap !important;
+}

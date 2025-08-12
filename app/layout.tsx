@@ -11,6 +11,7 @@ import { BooleanProvider } from './context/CartBoolContext';
 import GifLoader from '../components/GifLoader'
 import Offer from '../components/Offer'
 import WhatsAppIcon from '../components/WhatsAppIcon';  
+import MobileMusicButton from '../components/MobileMusicButton';  
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 
@@ -131,7 +132,7 @@ export default function RootLayout({
  
       <Offer /> 
       <GifLoader />
-
+<MobileMusicButton  />
         
         <BooleanProvider>
         <CartProvider>
