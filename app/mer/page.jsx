@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Home() {
   const sections = [
     {
@@ -75,7 +73,7 @@ export default function Home() {
             key={index}
             style={{
               display: "flex",
-              width: "100%", 
+              width: "100%",
               alignItems: "center",
               justifyContent: "center",
               padding: "40px 20px",
@@ -98,11 +96,7 @@ export default function Home() {
               }}
             >
               {/* Right Side - Image */}
-              <motion.div
-                initial={{ x: 100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: true, amount: 0.4 }}
+              <div
                 style={{
                   width: "50%",
                   display: "flex",
@@ -120,17 +114,12 @@ export default function Home() {
                     borderRadius: "8px",
                   }}
                 />
-              </motion.div>
+              </div>
 
               {/* Left Side - Text */}
-              <motion.div
-                initial={{ x: -100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.4 }}
+              <div
                 style={{
-                  width: "50%",
-                  paddingRight: "20px",
+                  width: "40%",
                 }}
                 className="content-text"
               >
@@ -150,7 +139,7 @@ export default function Home() {
                 >
                   {section.description}
                 </p>
-              </motion.div>
+              </div>
             </a>
           </section>
         );

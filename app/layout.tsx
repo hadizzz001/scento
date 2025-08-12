@@ -13,6 +13,7 @@ import Offer from '../components/Offer'
 import WhatsAppIcon from '../components/WhatsAppIcon';  
 import MobileMusicButton from '../components/MobileMusicButton';  
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { MusicProvider } from "./context/MusicContext";
 
 
 
@@ -129,7 +130,7 @@ export default function RootLayout({
 </>
 
       <body>
- 
+ <MusicProvider> 
       <Offer /> 
       <GifLoader />
 <MobileMusicButton  />
@@ -139,11 +140,13 @@ export default function RootLayout({
           <Navbar2 />
           <WhatsAppIcon />
           {/* <GoogleAnalytics gaId="" /> */}
+           
           {children} 
+          
           <Footer />
         </CartProvider>
         </BooleanProvider>
-        
+        </MusicProvider>
       </body>
     </html>
   )
