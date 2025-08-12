@@ -14,6 +14,13 @@ export default function MobileMusicButton() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Auto-play on desktop
+  useEffect(() => {
+    if (!isMobile && audioRef.current) {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+    }
+  }, [isMobile]);
+
   const toggleMusic = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
@@ -24,34 +31,34 @@ export default function MobileMusicButton() {
     }
   };
 
-  if (!isMobile) return null;
-
   return (
     <>
-      <button
-        onClick={toggleMusic}
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          left: "20px",
-          background: "#1f1a17",
-          padding: "12px",
-          borderRadius: "50%",
-          border: "none",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          zIndex: 9999
-        }}
-      >
-        <Music
-          color="white"
-          strokeWidth={1}
-          size={24}
-          style={{ opacity: isPlaying ? 1 : 0.6 }}
-        />
-      </button>
+      {isMobile && (
+        <button
+          onClick={toggleMusic}
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            left: "20px",
+            background: "#1f1a17",
+            padding: "12px",
+            borderRadius: "50%",
+            border: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            zIndex: 9999
+          }}
+        >
+          <Music
+            color="white"
+            strokeWidth={1}
+            size={24}
+            style={{ opacity: isPlaying ? 1 : 0.6 }}
+          />
+        </button>
+      )}
 
       <audio ref={audioRef} src="/background.mp3" loop />
     </>
